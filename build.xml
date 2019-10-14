@@ -1,0 +1,40 @@
+<project name="Sokoban" basedir="." default="run">
+	
+
+	
+	<target name="clean">
+		<delete dir="code/bin" />
+		<delete dir="code/Jtest/tests"/>
+	</target>
+	
+	<target name="build" depends="clean">
+		<mkdir dir="code/bin"/>
+		<mkdir dir="code/Jtest/tests"/>
+		<javac srcdir="code/src" destdir="code/bin" classpath="code/lib/junit-4.12.jar"/>
+	</target>
+	
+	
+		
+	<target name="run" depends="build">
+		<java classname="Main" fork="true">
+		<classpath>
+        <pathelement location="code/bin"/>
+		</classpath>
+		</java>
+	</target>
+	
+	<target name="test" depends="build" description="Lance les tests unitaires">
+		<junit showoutput="true" printsummary="yes">
+			<classpath>
+				<pathelement path="code/lib/junit-4.12.jar"/>
+				<pathelement path="code/lib/hamcrest-core-1.3.jar"/>
+				<pathelement path="code/bin"/>
+			</classpath>
+			<batchtest>
+				<fileset dir="code/src" includes="GameTest.java"/>
+			</batchtest>
+		</junit>
+	</target>
+</project>
+
+

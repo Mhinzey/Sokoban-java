@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="private" author="true" classpath="." destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.5" sourcefiles="src/Ground.java,src/GameFrame.java,src/Game.java,src/Goal.java,src/Menu.java,src/Main.java,src/Char.java,src/EditorFrame.java,src/Editor.java,src/Box.java,src/Wall.java" sourcepath="src" splitindex="true" use="true" version="true"/>
+    </target>
+</project>
